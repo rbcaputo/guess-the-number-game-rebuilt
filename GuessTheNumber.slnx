@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="GuessTheNumber.App/GuessTheNumber.App.csproj" Id="05f37b0c-032c-4a27-8c66-0a01b6dbb6e1" />
+  <Project Path="GuessTheNumber.Core/GuessTheNumber.Engine.csproj" />
+  <Project Path="GuessTheNumber.Tests/GuessTheNumber.Tests.csproj" Id="33b079ac-5e8c-481c-a63e-0f0fe5f69383" />
+</Solution>

@@ -1,0 +1,99 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GuessTheNumber.App.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="GuessTheNumber.App.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Width="300" Height="300" CanResize="False"
+        Title="GuessTheNumber">
+
+  <StackPanel Margin="20" Spacing="15">
+
+    <!--Title-->
+    <TextBlock Text="Guess the Number"
+               FontSize="20"
+               FontWeight="SemiBold"
+               HorizontalAlignment="Center" />
+
+    <!--Score-->
+    <TextBlock HorizontalAlignment="Center"
+               FontSize="15">
+
+      <Run Text="{Binding PlayerScore}" />
+      <Run Text="  .  " />
+      <Run Text="{Binding CpuScore}" />
+
+    </TextBlock>
+
+    <!--Message-->
+    <TextBlock Text="{Binding Message}"
+               FontSize="20"
+               TextAlignment="Center"
+               TextWrapping="Wrap"
+               Foreground="{Binding MessageBrush}"
+               Opacity="{Binding MessageOpacity}">
+
+      <TextBlock.Transitions>
+
+        <Transitions>
+
+          <BrushTransition Property="Foreground" Duration="0:0:0.25" />
+          <DoubleTransition Property="Opacity" Duration="0:0:0.2" />
+
+        </Transitions>
+
+      </TextBlock.Transitions>
+
+    </TextBlock>
+
+    <!--Chances-->
+    <TextBlock Text="{Binding RemainingChances, StringFormat=Chances left: {0}}"
+               FontSize="15"
+               HorizontalAlignment="Center" />
+
+    <!--Input row-->
+    <StackPanel Orientation="Horizontal"
+                Spacing="10"
+                HorizontalAlignment="Center"
+                Margin="0,5">
+
+      <TextBox x:Name="InputBox"
+               Width="150"
+               Text="{Binding Input}"
+               Watermark="Your guess"
+               KeyDown="InputBox_KeyDown"
+               TabIndex="0" />
+      <Button Width="100"
+              Content="Guess"
+              HorizontalContentAlignment="Center"
+              Command="{Binding GuessCommand}"
+              TabIndex="1" />
+
+    </StackPanel>
+
+
+    <!--Reset & Settings-->
+    <StackPanel Orientation="Horizontal"
+                Spacing="10"
+                HorizontalAlignment="Center">
+
+      <Button x:Name="ResetButton"
+              Width="100"
+              Content="Reset"
+              HorizontalContentAlignment="Center"
+              Command="{Binding ResetCommand}"
+              HorizontalAlignment="Center"
+              TabIndex="2" />
+      <Button Width="100"
+              Content="Settings"
+              Command="{Binding OpenSettingsCommand}"
+              HorizontalContentAlignment="Center"
+              TabIndex="3" />
+
+    </StackPanel>
+
+  </StackPanel>
+
+</Window>

@@ -1,0 +1,73 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:GuessTheNumber.App.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="GuessTheNumber.App.Views.SettingsWindow"
+        x:DataType="vm:SettingsWindowViewModel"
+        Width="300" Height="350" CanResize="False"
+        SystemDecorations="None"
+        Title="GuessTheNumber Settings">
+
+  <Grid RowDefinitions="Auto,*">
+
+    <!--Draggable header-->
+    <Border Grid.Row="0"
+            Background="#222"
+            Height="30"
+            PointerPressed="Header_PointerPressed">
+
+      <TextBlock Text="Settings"
+                 Foreground="White"
+                 VerticalAlignment="Center"
+                 Margin="10,0" />
+
+    </Border>
+    <StackPanel Grid.Row="1"
+                Margin="15"
+                Spacing="10">
+
+      <TextBlock Text="Minimum number:" />
+      <TextBox Text="{Binding Min}"
+               TabIndex="0" />
+
+      <TextBlock Text="Maximum number:" />
+      <TextBox Text="{Binding Max}"
+               TabIndex="1" />
+
+      <TextBlock Text="Chances:" />
+      <TextBox Text="{Binding Chances}"
+               TabIndex="2" />
+
+      <Panel IsVisible="{Binding Error}">
+
+        <TextBlock Text="{Binding Error}"
+                   Foreground="Red"
+                   HorizontalAlignment="Center"
+                   TextWrapping="Wrap"
+                   IsVisible="{Binding ShowErrors}" />
+
+      </Panel>
+      <StackPanel Orientation="Horizontal"
+                  Spacing="10"
+                  HorizontalAlignment="Center">
+
+        <Button Width="100"
+                Content="OK"
+                Command="{Binding ConfirmCommand}"
+                HorizontalContentAlignment="Center"
+                TabIndex="3" />
+        <Button Width="100"
+                Content="Cancel"
+                Command="{Binding CancelCommand}"
+                HorizontalContentAlignment="Center"
+                TabIndex="4" />
+
+      </StackPanel>
+
+    </StackPanel>
+
+  </Grid>
+
+</Window>
