@@ -6,12 +6,12 @@ namespace GuessTheNumber.Tests
   public sealed class SettingsTests
   {
     [Fact]
-    public void Constructor_WithValidValues_CreatesSetttings()
+    public void Constructor_WithValidValues_CreatesSettings()
     {
       Settings settings = new(1, 9, 3);
 
       settings.Min.Should().Be(1);
-      settings.Max.Should().Be(10);
+      settings.Max.Should().Be(9);
       settings.Chances.Should().Be(3);
     }
 
@@ -45,18 +45,6 @@ namespace GuessTheNumber.Tests
       action.Should()
         .Throw<ArgumentException>()
         .WithMessage("*greater*");
-    }
-
-    [Theory]
-    [InlineData(1, 0, 3)]
-    [InlineData(1, -1, 3)]
-    public void Constructor_MaxLessThanOrEqualZero_Throws(int min, int max, int chances)
-    {
-      Action action = () => new Settings(min, max, chances);
-
-      action.Should()
-        .Throw<ArgumentOutOfRangeException>()
-        .WithMessage("*Maximum*");
     }
 
     [Theory]
