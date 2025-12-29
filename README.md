@@ -17,7 +17,7 @@ This project represents my journey as a developer.
 | **Language** | JavaScript | C#/.NET 8 |
 | **UI** | HTML/CSS | Avalonia (cross-platform XAML) |
 | **Architecture** | Basic structure, no clear separation | Clean architecture, MVVM |
-| ** Testing ** | None | xUnit with 15+ tests |
+| ** Testing** | None | xUnit with 15+ tests |
 | **Code quality** | Procedural, global state | OOP, immutable data, encapsulation |
 | **Patterns** | None | Command, observer, DI |
 
