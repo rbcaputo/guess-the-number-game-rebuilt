@@ -8,7 +8,7 @@ namespace GuessTheNumber.Tests
     [Fact]
     public void Constructor_WithValidValues_CreatesSetttings()
     {
-      Settings settings = new(1, 10, 3);
+      Settings settings = new(1, 9, 3);
 
       settings.Min.Should().Be(1);
       settings.Max.Should().Be(10);
@@ -16,8 +16,8 @@ namespace GuessTheNumber.Tests
     }
 
     [Theory]
-    [InlineData(0, 10, 3)]
-    [InlineData(-1, 10, 3)]
+    [InlineData(0, 9, 3)]
+    [InlineData(-1, 9, 3)]
     public void Constructor_MinLessThanOrEqualZero_Throws(int min, int max, int chances)
     {
       Action action = () => new Settings(min, max, chances);
@@ -40,7 +40,7 @@ namespace GuessTheNumber.Tests
     [Fact]
     public void Constructor_MinGreaterThanMax_Throws()
     {
-      Action action = () => new Settings(10, 1, 3);
+      Action action = () => new Settings(9, 1, 3);
 
       action.Should()
         .Throw<ArgumentException>()
@@ -60,8 +60,8 @@ namespace GuessTheNumber.Tests
     }
 
     [Theory]
-    [InlineData(1, 10, 0)]
-    [InlineData(1, 10, -1)]
+    [InlineData(1, 9, 0)]
+    [InlineData(1, 9, -1)]
     public void Constructor_ChancesLessThanOrEqualZero_Throws(int min, int max, int chances)
     {
       Action action = () => new Settings(min, max, chances);
