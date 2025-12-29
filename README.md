@@ -124,7 +124,7 @@ dotnet test
 
 ## 📸 Screenshots
 
-[Main window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-main-window.png) [Settings window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-settings-window.png) [Win game window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-wingame-window.png)
+![Main window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-main-window.png) ![Settings window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-settings-window.png) ![Win game window](https://github.com/rbcaputo/guess-the-number-game-rebuilt/blob/main/Screenshots/gtn-wingame-window.png)
   
 ## 🔮 Possible Future Enhancements
 
